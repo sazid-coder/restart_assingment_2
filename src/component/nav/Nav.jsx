@@ -4,7 +4,7 @@ const Nav = () => {
     return (
         <>
             <div className="bg-white ">
-                <nav className="flex items-center justify-between py-4 bg-white sticky top-0 z-50 h-20 container mx-auto">
+                <nav className="flex items-center justify-between py-4 bg-white sticky top-0 z-50 h-20 container mx-auto px-4">
                     <div className="flex items-center gap-1">
                         <span className="text-xl text-black font-bold tracking-tight">CS — Ticket System</span>
                     </div>

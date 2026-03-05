@@ -28,19 +28,19 @@ const Tickets = () => {
 
     return (
         <>
-            <div className=''>
+            <div className='px-4'>
                 <Status inProgress={inProgress} count={count}></Status>
             </div>
-            <div className='container mx-auto flex gap-5'>
+            <div className='container px-4 mx-auto flex flex-col-reverse md:flex-row gap-5'>
 
                 <div className=''>
-                    <h3 className='text-black text-2xl'>Customer Tickets</h3>
+                    <h3 className='text-black text-2xl mb-4'>Customer Tickets</h3>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                         <Ticket tickets={tickets} updateProgress={updateProgress}></Ticket>
                     </div>
                 </div>
-                <div className='w-1/3 text-black'>
-                    <h3 className=' text-2xl'>Task Status</h3>
+                <div className='lg:w-1/2 text-black'>
+                    <h3 className=' text-2xl mb-4'>Task Status</h3>
 
                     {
                         inProgress.map(item => (
