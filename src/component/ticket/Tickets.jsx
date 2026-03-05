@@ -18,7 +18,7 @@ const Tickets = () => {
             const toalProgress = [...inProgress, ticket.title];
             setInProgress(toalProgress);
         }
-        toast("Task Selected");
+        toast.warn("Task Selected");
 
     }
 
@@ -26,7 +26,7 @@ const Tickets = () => {
         const updatetask = inProgress.filter(item => item !== title);
         setInProgress(updatetask);
         setResolveTask(prev => [...prev, title]);
-        toast("Task Completed");
+        toast.success("Task Completed");
     }
 
     const [count, setCount] = useState(0);
