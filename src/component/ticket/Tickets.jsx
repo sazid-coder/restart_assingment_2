@@ -10,8 +10,13 @@ const Tickets = () => {
     const [inProgress, setInProgress] = useState([]);
 
     const updateProgress = (ticket) => {
-        const toalProgress = [...inProgress, ticket.title];
-        setInProgress(toalProgress);
+
+        if (!inProgress.includes(ticket.title)) {
+
+            const toalProgress = [...inProgress, ticket.title];
+            setInProgress(toalProgress);
+        }
+
     }
 
     const completetask = (title) => {
@@ -19,10 +24,12 @@ const Tickets = () => {
         setInProgress(updatetask);
     }
 
+    const [count, setCount] = useState(0);
+
     return (
         <>
             <div className=''>
-                <Status inProgress={inProgress}></Status>
+                <Status inProgress={inProgress} count={count}></Status>
             </div>
             <div className='container mx-auto flex gap-5'>
 
@@ -39,7 +46,10 @@ const Tickets = () => {
                         inProgress.map(item => (
                             <div className='bg-white p-4 rounded-sm border border-gray-100 shadow-sm flex flex-col justify-between transition-all hover:shadow-md mb-4'>
                                 <h4 className='text-sm'>{item}</h4>
-                                <button onClick={() => completetask(item)} className="bg-[#02A53B] mt-4 p-1 text-white rounded-sm border cursor-pointer">Complete</button>
+                                <button onClick={() => {
+                                    completetask(item);
+                                    setCount(count + 1);
+                                }} className="bg-[#02A53B] mt-4 p-1 text-white rounded-sm border cursor-pointer">Complete</button>
                             </div>))
                     }
 

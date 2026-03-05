@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Status = ({ inProgress }) => {
+const Status = ({ inProgress, count }) => {
 
 
     const total = inProgress.length;
@@ -14,7 +14,7 @@ const Status = ({ inProgress }) => {
                 </div>
                 <div className="h-64 rounded-2xl p-8 flex flex-col items-center justify-center text-white bg-[url(./assets/bg2.png)] bg-no-repeat bg-cover">
                     <h3 className="text-2xl font-medium mb-2">Resolved</h3>
-                    <span className="text-8xl font-bold">0</span>
+                    <span className="text-8xl font-bold">{count}</span>
                 </div>
 
             </div>
