@@ -12,7 +12,11 @@ const Tickets = () => {
     const updateProgress = (ticket) => {
         const toalProgress = [...inProgress, ticket.title];
         setInProgress(toalProgress);
-        console.log(inProgress);
+    }
+
+    const completetask = (title) => {
+        const updatetask = inProgress.filter(item => item !== title);
+        setInProgress(updatetask);
     }
 
     return (
@@ -35,7 +39,7 @@ const Tickets = () => {
                         inProgress.map(item => (
                             <div className='bg-white p-4 rounded-sm border border-gray-100 shadow-sm flex flex-col justify-between transition-all hover:shadow-md mb-4'>
                                 <h4 className='text-sm'>{item}</h4>
-                                <button className="bg-[#02A53B] mt-4 p-1 text-white rounded-sm border cursor-pointer">Complete</button>
+                                <button onClick={() => completetask(item)} className="bg-[#02A53B] mt-4 p-1 text-white rounded-sm border cursor-pointer">Complete</button>
                             </div>))
                     }
 
