@@ -10,7 +10,6 @@ function App() {
   return (
     <>
       <Nav></Nav>
-      <Status></Status>
       <Tickets></Tickets>
       <Footer></Footer>
     </>

@@ -14,11 +14,12 @@ const Tickets = () => {
         setInProgress(toalProgress);
         console.log(inProgress);
     }
-    <Status inProgress={inProgress}></Status>
 
     return (
         <>
-
+            <div className=''>
+                <Status inProgress={inProgress}></Status>
+            </div>
             <div className='container mx-auto flex gap-5'>
 
                 <div className=''>
@@ -39,7 +40,7 @@ const Tickets = () => {
                     }
 
                 </div>
-            </div>
+            </div >
         </>
     );
 };
